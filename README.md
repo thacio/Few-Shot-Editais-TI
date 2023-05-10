@@ -37,14 +37,13 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 | ult5-pt-small - 6535 fine-tune                                                                                                          | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
 
-
 ## Observações e comentários
 
-- Seria interessante saber a partir de qual tamanho de rede ultrapassaria a performance do SetFit, mas não existe modelo da OpenAI disponível intermediário entre 6.7B e 175B. 
+- Os modelos apresentaram do GPT3 apresentaram muita inconsistência com o mesmo prompt. O 'curie', que é seria maior que o 'ada' e o 'babbage', teve um péssimo desempenho com os 4 prompts. O prompt 3 e 4 foram melhores com o Ada, e fez o babbage piorar. Esperava-se que o mesmo prompt funcionariam com os modelos e melhorariam conforme o crescimento da rede, mas esse não é o caso. Talvez esse seja o caso com datasets em português, neste específico, houve grande inconsistência.
 
 - Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificado errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganham 1% de acurácia e há um pequeno aumento em todas as métricas. Vou deixar da forma como está, sem efetuar os recálculos, para manter os mesmos resultados dos notebooks.
 
-- O modelo Curie, apesar de ser 6 vezes o tamanho do baggage, possui desempenho pior nesse dataset específico. Mesmo com algumas tentativas de mudança de prompt, o desempenho piorou. Além disso, tentar o prompt com letras minúsculas piorou o resultado nos 3 modelos GPT3 (ada, babage e curie). Os outros prompts testados tiveram pior performance, inclusive substituir as expressões 'Tecnologia da informação' por 'informática'. Como cada tentativa é paga, manteve-se os mesmos prompts do notebook que funcionaram com o DaVinci, Ada e Babbage. 
+- O modelo Curie, apesar de ser 6 vezes o tamanho do baggage, possui desempenho pior nesse dataset específico. Mesmo com algumas tentativas de mudança de prompt, o desempenho piorou. Além disso, tentar o prompt com letras minúsculas piorou o resultado nos 3 modelos GPT3 (ada, babage e curie). Os outros prompts testados tiveram pior performance, inclusive substituir as expressões 'Tecnologia da informação' por 'informática'.
 
 - Infelizmente não sei quem criou o dataset para os devidos créditos.
 
@@ -84,7 +83,7 @@ Registro de Preços para eventual aquisição de no-break s destinados às diver
 Não salvei o prompt, mas a mudança foi trocar os tremos de 'Tecnologia da informação' por informática;
 
 ## Prompt 3
-Os prompts 3 e 4 foram feitos de acordo com os exemplos mostrado ao final do paper original do GPT3 - [Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf).
+Os prompts 3 e 4 foram feitos de acordo com os exemplos mostrado ao final do paper original do GPT3 - [Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf) (a partir da página 50). 
 
 ```
 Detalhamento da instrução:
@@ -123,7 +122,7 @@ Exemplo: Pregão destinado para eventual aquisição de material de higiene e li
 Classe: Outras compras
 Exemplo: Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. 
 Classe: Tecnologia da Informação
-Exemplo: {Objeto a ser classificado}
+Exemplo: [Objeto a ser classificado]
 Classe:
 ```
 
@@ -156,4 +155,6 @@ Objeto: Pregão destinado para eventual aquisição de material de higiene e lim
 Classificação: Outras compras
 Objeto: Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. 
 Classificação: Tecnologia da Informação
+Objeto: [Objeto a ser classificado]
+Classificação:
 ```
