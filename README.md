@@ -18,16 +18,22 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 
 | Modelo - Qtd. Shots                                                                                                                     | Parâmetros | Acuraccy | Recall TI | Precision TI | Recall Outras compras | Precision Outras compras |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------|----------|-----------|--------------|-----------------------|--------------------------|
-| Ada - 12 shot                                                                                                                           | -          | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
+| Curie (4o prompt) - 12 shot                                                                                                             | 6.7B       | 0.5      | 1         | 0.5          | 0                     | 0                        |
+| Baggage (4o prompt) - 12 shot                                                                                                           | 1B         | 0.5      | 0.98      | 0.5          | 0.02                  | 0.5                      |
+| Curie (3o prompt) - 12 shot                                                                                                             | 6.7B       | 0.51     | 1         | 0.505        | 0.02                  | 1                        |
+| Baggage (3o prompt) - 12 shot                                                                                                           | 1B         | 0.53     | 0.98      | 0.515        | 0.08                  | 0.8                      |
+| Ada (1o prompt) - 12 shot                                                                                                               | -          | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
 | Ada (2o prompt) - 12 shot                                                                                                               | -          | 0.56     | 0.6       | 0.555        | 0.52                  | 0.565                    |
-| Baggage - 12 shot                                                                                                                       | 1B         | 0.6      | 0.96      | 0.558        | 0.24                  | 0.857                    |
-| Baggage - (2o prompt) - 12 shot                                                                                                         | 1B         | 0.62     | 0.96      | 0.571        | 0.28                  | 0.875                    |
-| Curie - 12 shot                                                                                                                         | 6.7B       | 0.55     | 0.96      | 0.527        | 0.14                  | 0.77                     |
+| Baggage (1o prompt) - 12 shot                                                                                                           | 1B         | 0.6      | 0.96      | 0.558        | 0.24                  | 0.857                    |
+| Baggage    (2o prompt) - 12 shot                                                                                                        | 1B         | 0.62     | 0.96      | 0.571        | 0.28                  | 0.875                    |
+| Curie (1o prompt) - 12 shot                                                                                                             | 6.7B       | 0.55     | 0.96      | 0.527        | 0.14                  | 0.77                     |
 | Curie (2o prompt) - 12 shot                                                                                                             | 6.7B       | 0.52     | 0.9       | 0.511        | 0.14                  | 0.583                    |
+| Ada (3o prompt) - 12 shot                                                                                                               | -          | 0.72     | 0.92      | 0.657        | 0.52                  | 0.866                    |
+| Ada (4o prompt) - 12 shot                                                                                                               | -          | 0.74     | 0.9       | 0.681        | 0.58                  | 0.852                    |
 | [sentence-transformer-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small)   - 12 shot                                               | 51M        | 0.84     | 0.8       | 0.869        | 0.88                  | 0.814                    |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2)   - 12 shot | 278M       | 0.86     | 0.8       | 0.909        | 0.92                  | 0.821                    |
 | ChatGPT - zero shot                                                                                                                     | 175B       | 0.91     | 0.86      | 0.955        | 0.96                  | 0.872                    |
-| Davinci-003 - 12 shot                                                                                                                   | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
+| Davinci-003 (1o prompt) - 12 shot                                                                                                       | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
 | ult5-pt-small - 6535 fine-tune                                                                                                          | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
 
@@ -44,10 +50,110 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 
 - Agradecimentos ao Ricardo Akl, Sylvio e [Edans](https://github.com/edanssandes), por quem tive conhecimento do dataset, e ao Edans também pela criação do [notebook de classificação zero-shot do ChatGPT]((https://github.com/edanssandes/LicitacoesChatGPT/blob/main/Classificacao.ipynb) no qual o notebook Classificacao-ChatGPT-Zero-Shot.ipynb foi inteiramente baseado.
 
-- Os prompts do GPT3 foram feitos da forma tradicional:
+## Prompts do GPT3
+Os prompts 1 e 2 foram feitos da forma tradicional:
 ```
 Detalhamento da instrução:
 Exemplo => Classe
 Exemplo => Classe
 Exemplo a ser classificado =>
+```
+
+## Prompt 1
+```
+Vou apresesentar exemplos de objetos de licitação e você classificará o objeto em 'Tecnologia da Informação', caso o objeto se refira a licitação de itens de Tecnologia da informação ou materiais e equipamentos de informática, ou 'Outras compras' para qualquer outro tipo de compra que não seja TI, como escritório, obras, saúde, entre outras.
+O último exemplo estará vazio para que você realize a classificação.
+Apresente apenas a classificação nessa duas classes, sem qualquer outra palavra adicional.
+Exemplos:
+Prestação de serviços de operação e suporte da Central de Atendimento de Telecomunicações do Senado Federal, realizados por equipe técnica residente, nas dependências da Coordenação de Telecomunicações   COOTELE, durante 12 (doze) meses consecutivos, de acordo com as quantidades, periodicidade, especificações, obrigações e demais condições do edital e seus anexos. => Outras compras
+Aquisição de uma Solução de Gestão Jurídica, com licenças de uso perpétuo, em conjunto com serviços de implementação (planejamento, instalação, implantação da Solução e migração de dados), serviço de captura de processos, andamentos e publicações, manutenção/suporte técnico (incluindo atualização de versão), treinamento, consultoria/ manutenção evolutiva e implantação de funcionalidades adicionais, conforme as especificações do Edital e de seus Anexos => Tecnologia da Informação
+Registro de preços para eventual aquisição de rastreadores portáteis com tecnologia GPS (Global Positioning System) => Tecnologia da Informação
+Contratação de serviços continuados de analise, validação e transcrição de dados e eventos atualmente registrados em imagens e microfilmes que integram o acervo de documentos Meteorológicos do Instituto Nacional de Meteorologia - INMET, contemplando a prestação de serviços de digitação, visando a atualização do Banco de Dados Meteorológico conforme condições, quantidades e exigências estabelecidas no presente Edital e seus anexos => Tecnologia da Informação
+Contratação de serviços continuados de apoio técnico especializado, suporte e atendimento aos usuários dos recursos de Tecnologia da Informação => Tecnologia da Informação
+Registro de Preço para aquisição de ESPARGIDORES LACRIMOGÊNEOS PIMENTA (OC), na versão para uso coletivo em Operações de Controle de Distúrbios - OCD, e também em outro modelo, de uso individual, para porte do Policial Rodoviário Federal; conforme condições, quantidades, exigências e estimativas, inclusive as encaminhadas pelos órgãos e entidades participantes, estabelecidas no Termo de Referência. => Outras compras
+Registro de preço para possível aquisição de insumos   pó de brita, brita 0 e brita 1 a serem empregados na Obra de Pavimentação de Logradouros, no município de Araguari-MG e  pó de brita, brita 0, brita 1 e brita 2 e pedra de mão a serem empregados na Obra de Construção de Infraestrutura para Hangares na Base Aérea de São Pedro da Aldeia/RJ => Outras compras
+Registro de Preços, pelo prazo de até 12 meses, para eventual aquisição de Materiais da marca Sigma para atender as necessidades de Bio Manguinhos. => Outras compras
+Contratação de serviços de coleta, transporte, tratamento e destinação final de resíduos sólidos de saúde (lixo hospitalar) para o Hospital Geral de Belém. => Outras compras
+Solução comunicação privada e corporativa com fornecimento de software do ambiente colaborativo e de smartphone com licença de uso do ambiente colaborativo, que garanta a inviolabilidade da comunicação e permita a contribuição entre usuários usando mensagens de texto, voz, vídeo e documentos. => Tecnologia da Informação
+Pregão destinado para eventual aquisição de material de higiene e limpeza => Outras compras
+Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. => Tecnologia da Informação
+[Objeto a ser classificado] =>
+```
+
+## Prompt 2
+Não salvei o prompt, mas a mudança foi trocar os tremos de 'Tecnologia da informação' por informática;
+
+## Prompt 3
+Os prompts 3 e 4 foram feitos de acordo com os exemplos mostrado ao final do paper original do GPT3 - [Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf).
+
+```
+Detalhamento da instrução:
+Exemplo: [objeto de exemplo]
+Classe: [Classificação]
+Exemplo: [objeto de exemplo]
+Classe: [Classificação]
+Exemplo: [objeto a ser classificado]
+Classe:
+```
+
+```
+Vou apresesentar exemplos de objetos de licitação e você classificará o objeto em 'Tecnologia da Informação', caso o objeto se refira a licitação de itens de Tecnologia da informação ou materiais e equipamentos de informática, ou 'Outras compras' para qualquer outro tipo de compra que não seja TI, como escritório, obras, saúde, entre outras.
+A classificação deve ser em apenas uma dessas duas classes, sem qualquer outra palavra adicional.
+Exemplo: Prestação de serviços de operação e suporte da Central de Atendimento de Telecomunicações do Senado Federal, realizados por equipe técnica residente, nas dependências da Coordenação de Telecomunicações   COOTELE, durante 12 (doze) meses consecutivos, de acordo com as quantidades, periodicidade, especificações, obrigações e demais condições do edital e seus anexos. 
+Classe: Outras compras
+Exemplo: Aquisição de uma Solução de Gestão Jurídica, com licenças de uso perpétuo, em conjunto com serviços de implementação (planejamento, instalação, implantação da Solução e migração de dados), serviço de captura de processos, andamentos e publicações, manutenção/suporte técnico (incluindo atualização de versão), treinamento, consultoria/ manutenção evolutiva e implantação de funcionalidades adicionais, conforme as especificações do Edital e de seus Anexos 
+Classe: Tecnologia da Informação
+Exemplo: Registro de preços para eventual aquisição de rastreadores portáteis com tecnologia GPS (Global Positioning System) 
+Classe: Tecnologia da Informação
+Exemplo: Contratação de serviços continuados de analise, validação e transcrição de dados e eventos atualmente registrados em imagens e microfilmes que integram o acervo de documentos Meteorológicos do Instituto Nacional de Meteorologia - INMET, contemplando a prestação de serviços de digitação, visando a atualização do Banco de Dados Meteorológico conforme condições, quantidades e exigências estabelecidas no presente Edital e seus anexos 
+Classe: Tecnologia da Informação
+Exemplo: Contratação de serviços continuados de apoio técnico especializado, suporte e atendimento aos usuários dos recursos de Tecnologia da Informação 
+Classe: Tecnologia da Informação
+Exemplo: Registro de Preço para aquisição de ESPARGIDORES LACRIMOGÊNEOS PIMENTA (OC), na versão para uso coletivo em Operações de Controle de Distúrbios - OCD, e também em outro modelo, de uso individual, para porte do Policial Rodoviário Federal; conforme condições, quantidades, exigências e estimativas, inclusive as encaminhadas pelos órgãos e entidades participantes, estabelecidas no Termo de Referência. 
+Classe: Outras compras
+Exemplo: Registro de preço para possível aquisição de insumos   pó de brita, brita 0 e brita 1 a serem empregados na Obra de Pavimentação de Logradouros, no município de Araguari-MG e  pó de brita, brita 0, brita 1 e brita 2 e pedra de mão a serem empregados na Obra de Construção de Infraestrutura para Hangares na Base Aérea de São Pedro da Aldeia/RJ 
+Classe: Outras compras
+Exemplo: Registro de Preços, pelo prazo de até 12 meses, para eventual aquisição de Materiais da marca Sigma para atender as necessidades de Bio Manguinhos. 
+Classe: Outras compras
+Exemplo: Contratação de serviços de coleta, transporte, tratamento e destinação final de resíduos sólidos de saúde (lixo hospitalar) para o Hospital Geral de Belém. 
+Classe: Outras compras
+Exemplo: Solução comunicação privada e corporativa com fornecimento de software do ambiente colaborativo e de smartphone com licença de uso do ambiente colaborativo, que garanta a inviolabilidade da comunicação e permita a contribuição entre usuários usando mensagens de texto, voz, vídeo e documentos. 
+Classe: Tecnologia da Informação
+Exemplo: Pregão destinado para eventual aquisição de material de higiene e limpeza 
+Classe: Outras compras
+Exemplo: Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. 
+Classe: Tecnologia da Informação
+Exemplo: {Objeto a ser classificado}
+Classe:
+```
+
+## Prompt 4
+
+```
+Vou apresesentar exemplos de objetos de licitação e você classificará o objeto em 'Tecnologia da Informação', caso o objeto se refira a licitação de itens de Tecnologia da informação ou materiais e equipamentos de informática, ou 'Outras compras' para qualquer outro tipo de compra que não seja TI, como escritório, obras, saúde, entre outras.
+A classificação deve ser em apenas uma dessas duas classes, sem qualquer outra palavra adicional.
+Objeto: Prestação de serviços de operação e suporte da Central de Atendimento de Telecomunicações do Senado Federal, realizados por equipe técnica residente, nas dependências da Coordenação de Telecomunicações   COOTELE, durante 12 (doze) meses consecutivos, de acordo com as quantidades, periodicidade, especificações, obrigações e demais condições do edital e seus anexos. 
+Classificação: Outras compras
+Objeto: Aquisição de uma Solução de Gestão Jurídica, com licenças de uso perpétuo, em conjunto com serviços de implementação (planejamento, instalação, implantação da Solução e migração de dados), serviço de captura de processos, andamentos e publicações, manutenção/suporte técnico (incluindo atualização de versão), treinamento, consultoria/ manutenção evolutiva e implantação de funcionalidades adicionais, conforme as especificações do Edital e de seus Anexos 
+Classificação: Tecnologia da Informação
+Objeto: Registro de preços para eventual aquisição de rastreadores portáteis com tecnologia GPS (Global Positioning System) 
+Classificação: Tecnologia da Informação
+Objeto: Contratação de serviços continuados de analise, validação e transcrição de dados e eventos atualmente registrados em imagens e microfilmes que integram o acervo de documentos Meteorológicos do Instituto Nacional de Meteorologia - INMET, contemplando a prestação de serviços de digitação, visando a atualização do Banco de Dados Meteorológico conforme condições, quantidades e exigências estabelecidas no presente Edital e seus anexos 
+Classificação: Tecnologia da Informação
+Objeto: Contratação de serviços continuados de apoio técnico especializado, suporte e atendimento aos usuários dos recursos de Tecnologia da Informação 
+Classificação: Tecnologia da Informação
+Objeto: Registro de Preço para aquisição de ESPARGIDORES LACRIMOGÊNEOS PIMENTA (OC), na versão para uso coletivo em Operações de Controle de Distúrbios - OCD, e também em outro modelo, de uso individual, para porte do Policial Rodoviário Federal; conforme condições, quantidades, exigências e estimativas, inclusive as encaminhadas pelos órgãos e entidades participantes, estabelecidas no Termo de Referência. 
+Classificação: Outras compras
+Objeto: Registro de preço para possível aquisição de insumos   pó de brita, brita 0 e brita 1 a serem empregados na Obra de Pavimentação de Logradouros, no município de Araguari-MG e  pó de brita, brita 0, brita 1 e brita 2 e pedra de mão a serem empregados na Obra de Construção de Infraestrutura para Hangares na Base Aérea de São Pedro da Aldeia/RJ 
+Classificação: Outras compras
+Objeto: Registro de Preços, pelo prazo de até 12 meses, para eventual aquisição de Materiais da marca Sigma para atender as necessidades de Bio Manguinhos. 
+Classificação: Outras compras
+Objeto: Contratação de serviços de coleta, transporte, tratamento e destinação final de resíduos sólidos de saúde (lixo hospitalar) para o Hospital Geral de Belém. 
+Classificação: Outras compras
+Objeto: Solução comunicação privada e corporativa com fornecimento de software do ambiente colaborativo e de smartphone com licença de uso do ambiente colaborativo, que garanta a inviolabilidade da comunicação e permita a contribuição entre usuários usando mensagens de texto, voz, vídeo e documentos. 
+Classificação: Tecnologia da Informação
+Objeto: Pregão destinado para eventual aquisição de material de higiene e limpeza 
+Classificação: Outras compras
+Objeto: Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. 
+Classificação: Tecnologia da Informação
 ```
