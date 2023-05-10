@@ -20,18 +20,18 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 | Davinci-003 - 12 shot                             | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
 | ult5-pt-small - 6535 fine-tune                    | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
-Observações e comentários
+## Observações e comentários
 
-- Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificando errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganhando 1% de acurácia, e há um pequeno aumento em todos as métricas. Vou deixar da forma como está para manter os mesmos resultados dos notebooks, sem efetuar os recálculos.
+- Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificando errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganham 1% de acurácia e há um pequeno aumento em todas as métricas. Vou deixar da forma como está, sem efetuar os recálculos, para manter os mesmos resultados dos notebooks.
 
-- O modelo Curie, apesar de ser 6 vezes o tamanho do baggage, possui desempenho menor nesse dataset específico. Mesmo com algumas tentativas de mudança de prompt, o desempenho piorou. Além disso, tentar o prompt com letras minúsculas piorou o resultado nos 3 modelos GPT3 (ada, babage e curie). Como cada tentativa é paga, manteve-se os mesmos prompts do notebook, que funcionaram com o DaVinci, Ada e Babbage. Os outros prompts testados tiveram pior performance, inclusive substituir as palavras 'Tecnologia da informação' para informática.
+- O modelo Curie, apesar de ser 6 vezes o tamanho do baggage, possui desempenho pior nesse dataset específico. Mesmo com algumas tentativas de mudança de prompt, o desempenho piorou. Além disso, tentar o prompt com letras minúsculas piorou o resultado nos 3 modelos GPT3 (ada, babage e curie). Os outros prompts testados tiveram pior performance, inclusive substituir as expressões 'Tecnologia da informação' por 'informática'. Como cada tentativa é paga, manteve-se os mesmos prompts do notebook que funcionaram com o DaVinci, Ada e Babbage. 
 
-- Não sei quem criou o dataset para os devidos créditos.
+- Infelizmente não sei quem criou o dataset para os devidos créditos.
 
-- Agradecimentos ao Ricardo Akl, Sylvio e [Edans](https://github.com/edanssandes), por quem tive conhecimento do dataset, e ao Edans também pela criação do [notebook de classificação zero-shot do ChatGPT]((https://github.com/edanssandes/LicitacoesChatGPT/blob/main/Classificacao.ipynb) em qual o notebook Classificacao-ChatGPT-Zero-Shot.ipynb foi inteiramente baseado.
+- Agradecimentos ao Ricardo Akl, Sylvio e [Edans](https://github.com/edanssandes), por quem tive conhecimento do dataset, e ao Edans também pela criação do [notebook de classificação zero-shot do ChatGPT]((https://github.com/edanssandes/LicitacoesChatGPT/blob/main/Classificacao.ipynb) no qual o notebook Classificacao-ChatGPT-Zero-Shot.ipynb foi inteiramente baseado.
 
 - Os prompts do GPT3 foram feitos da forma tradicional:
-Instrução:
+Detalhamento da instrução:
 Exemplo => Classe
 Exemplo => Classe
 Exemplo a ser classificado =>
