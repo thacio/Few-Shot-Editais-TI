@@ -1,6 +1,6 @@
 # Few-Shot-Editais-TI
 
-Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e [SetFit](https://github.com/huggingface/setfit) utilizando o modelo [sentence-transformers-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2). O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
+Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e [SetFit](https://github.com/huggingface/setfit) utilizando o modelo [sentence-transformers-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2), com zero-shot do ChatGPT. O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
 
 Os modelos utilizados da OpenAI foram: 'text-ada-001'; 'text-babbage-001'; 'text-curie-001'; 'text-davinci-003'; e 'gpt-3.5-turbo'. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas. Os modelos 'ada', 'babbage' e 'curie', sem o 'text-{modelo}-001', não retornaram classificações direito.
 
