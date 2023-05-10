@@ -45,8 +45,7 @@ Notebooks
 - Os prompts do GPT3 foram feitos da forma tradicional:
 
 Detalhamento da instrução:
-
-Exemplo => Classe
+\nExemplo => Classe
 
 Exemplo => Classe
 
