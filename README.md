@@ -24,10 +24,10 @@ Notebooks
 
 | Notebook | Colab |
 |-----------------------------------|---------------|
-| Classificação-SetFit-Few-shot | ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-SetFit-Few-shot.ipynb) |
-| Classificação-Finetunning-ult5 | ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-Finetunning-ult5.ipynb) |
-| Classificacao-GPT3e3.5-Few-Shot | ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-GPT3e3.5-Few-Shot.ipynb) |
-| Classificacao-ChatGPT-Zero-Shot | ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-ChatGPT-Zero-Shot.ipynb) |
+| Classificação-SetFit-Few-shot | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-SetFit-Few-shot.ipynb) |
+| Classificação-Finetunning-ult5 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-Finetunning-ult5.ipynb) |
+| Classificacao-GPT3e3.5-Few-Shot | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-GPT3e3.5-Few-Shot.ipynb) |
+| Classificacao-ChatGPT-Zero-Shot | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-ChatGPT-Zero-Shot.ipynb) |
 
 
 ## Observações e comentários
