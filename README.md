@@ -43,7 +43,11 @@ Notebooks
 - Agradecimentos ao Ricardo Akl, Sylvio e [Edans](https://github.com/edanssandes), por quem tive conhecimento do dataset, e ao Edans também pela criação do [notebook de classificação zero-shot do ChatGPT]((https://github.com/edanssandes/LicitacoesChatGPT/blob/main/Classificacao.ipynb) no qual o notebook Classificacao-ChatGPT-Zero-Shot.ipynb foi inteiramente baseado.
 
 - Os prompts do GPT3 foram feitos da forma tradicional:
+
 Detalhamento da instrução:
+
 Exemplo => Classe
+
 Exemplo => Classe
+
 Exemplo a ser classificado =>
