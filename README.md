@@ -2,7 +2,7 @@
 
 Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e [SetFit](https://github.com/huggingface/setfit) utilizando o modelo [sentence-transformers-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2). O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
 
-Os modelos utilizados da OpenAI foram: text-ada-001; text-babbage-001; text-curie-001; text-davinci-003; e gpt-3.5-turbo. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas. Os modelos 'ada', 'babbage' e 'curie', sem o 'text-{modelo}-001', não retornaram classificações direito.
+Os modelos utilizados da OpenAI foram: 'text-ada-001'; 'text-babbage-001'; 'text-curie-001'; 'text-davinci-003'; e 'gpt-3.5-turbo'. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas. Os modelos 'ada', 'babbage' e 'curie', sem o 'text-{modelo}-001', não retornaram classificações direito.
 
 O dataset consiste em objetos de editais de licitação, classificados em 'Tecnologia da informação', se o objeto se referir a essa área, e 'Outras compras' para todo o resto (obras, saúde, escritório, automóveis, etc). Foram separados 100 exemplos aleatórios de validação (reproduzidos em todo o notebook com o seeds), com 50 exemplos de cada classe. Se decidiu por 100, pois o aumento do número de exemplos começa a ficar proibitivo para o teste com o davinci. Para o davinci, 100 exemplos custa perto de $3.5 doláres, então o dataset inteiro passaria dos $160 (quase mil reais). 
 
