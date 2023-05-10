@@ -164,7 +164,8 @@ Classificação:
 # Prompt 5
 
 Não fiz upload deste prompt porque o Ada caiu o desemplo para 58% e o Babbage para 50%. Este prompt foi feito de acordo com o [exemplo de Tweet do site da OpenAI](https://platform.openai.com/docs/guides/completion/prompt-design).
-Com o mesmo prompt em 4%, o Ada fez 68%, e o Babbage 50%.
+
+Com o mesmo prompt em 4-shot, o Ada fez 68%, e o Babbage 50%.
 
 ```
 Decida os temas das compras, os temas podendo ser 'Tecnologia da Informação' ou 'Outras compras'. Será o tema 'Tecnologia da informação' caso a compra se refira a itens de tecnologia da informação, softwares, e materiais e equipamentos de informática. Será do tema 'Outras compras' para qualquer outro tipo de compra que não seja de informática ou tecnologia da informação, como escritório, obras, saúde, automóveis, entre outros.
