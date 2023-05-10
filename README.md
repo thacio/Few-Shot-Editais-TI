@@ -11,7 +11,7 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 
 | Modelo - Qtd. Shots                               | Parâmetros | Acuraccy | Recall TI | Precision TI | Recall Outras compras | Precision Outras compras |
 |---------------------------------------------------|------------|----------|-----------|--------------|-----------------------|--------------------------|
-| Ada - 12 shot                                     |   |-|      | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
+| Ada - 12 shot                                     |          | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
 | Babbage- 12 shot                                  | 1B         | 0.6      | 0.96      | 0.558        | 0.24                  | 0.857                    |
 | Curie - 12 shot                                   | 6.7B       | 0.55     | 0.96      | 0.527        | 0.14                  | 0.77                     |
 | sentence-transformer-ult5-pt-small - 12 shot    | 51M        | 0.84     | 0.8       | 0.869        | 0.88                  | 0.814                    |
