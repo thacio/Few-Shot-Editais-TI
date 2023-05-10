@@ -1,6 +1,6 @@
 # Few-Shot-Editais-TI
 
-Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e SeFit utilizando o modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2). O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
+Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e [SetFit](https://github.com/huggingface/setfit) utilizando o modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2). O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
 
 Os modelos utilizados da OpenAI foram: text-ada-001; text-babbage-001; text-curie-001; text-davinci-003; e gpt-3.5-turbo. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas.
 
@@ -21,6 +21,8 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 | ult5-pt-small - 6535 fine-tune                    | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
 ## Observações e comentários
+
+- Seria interessante saber a partir de qual tamanho de rede ultrapassria a performance do SetFit, mas não existe modelo da OpenAI disponível intermediário entre 6.7B e 175B. 
 
 - Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificando errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganham 1% de acurácia e há um pequeno aumento em todas as métricas. Vou deixar da forma como está, sem efetuar os recálculos, para manter os mesmos resultados dos notebooks.
 
