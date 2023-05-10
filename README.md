@@ -160,3 +160,37 @@ Classificação: Tecnologia da Informação
 Objeto: [Objeto a ser classificado]
 Classificação:
 ```
+
+# Prompt 5
+
+Não fiz upload deste prompt, pois o Ada caiu o desemplo para 58% e o Babbage para 50%. Este prompt foi feito de acordo com o [exemplo de Tweet do site da OpenAI](https://platform.openai.com/docs/guides/completion/prompt-design).
+
+```
+Decida os temas das compras, os temas podendo ser 'Tecnologia da Informação' ou 'Outras compras'. Será o tema 'Tecnologia da informação' caso a compra se refira a itens de tecnologia da informação, softwares, e materiais e equipamentos de informática. Será do tema 'Outras compras' para qualquer outro tipo de compra que não seja de informática ou tecnologia da informação, como escritório, obras, saúde, automóveis, entre outros.
+Compra: Prestação de serviços de operação e suporte da Central de Atendimento de Telecomunicações do Senado Federal, realizados por equipe técnica residente, nas dependências da Coordenação de Telecomunicações   COOTELE, durante 12 (doze) meses consecutivos, de acordo com as quantidades, periodicidade, especificações, obrigações e demais condições do edital e seus anexos. 
+Tema: Outras compras
+Compra: Aquisição de uma Solução de Gestão Jurídica, com licenças de uso perpétuo, em conjunto com serviços de implementação (planejamento, instalação, implantação da Solução e migração de dados), serviço de captura de processos, andamentos e publicações, manutenção/suporte técnico (incluindo atualização de versão), treinamento, consultoria/ manutenção evolutiva e implantação de funcionalidades adicionais, conforme as especificações do Edital e de seus Anexos 
+Tema: Tecnologia da Informação
+Compra: Registro de preços para eventual aquisição de rastreadores portáteis com tecnologia GPS (Global Positioning System) 
+Tema: Tecnologia da Informação
+Compra: Contratação de serviços continuados de analise, validação e transcrição de dados e eventos atualmente registrados em imagens e microfilmes que integram o acervo de documentos Meteorológicos do Instituto Nacional de Meteorologia - INMET, contemplando a prestação de serviços de digitação, visando a atualização do Banco de Dados Meteorológico conforme condições, quantidades e exigências estabelecidas no presente Edital e seus anexos 
+Tema: Tecnologia da Informação
+Compra: Contratação de serviços continuados de apoio técnico especializado, suporte e atendimento aos usuários dos recursos de Tecnologia da Informação 
+Tema: Tecnologia da Informação
+Compra: Registro de Preço para aquisição de ESPARGIDORES LACRIMOGÊNEOS PIMENTA (OC), na versão para uso coletivo em Operações de Controle de Distúrbios - OCD, e também em outro modelo, de uso individual, para porte do Policial Rodoviário Federal; conforme condições, quantidades, exigências e estimativas, inclusive as encaminhadas pelos órgãos e entidades participantes, estabelecidas no Termo de Referência. 
+Tema: Outras compras
+Compra: Registro de preço para possível aquisição de insumos   pó de brita, brita 0 e brita 1 a serem empregados na Obra de Pavimentação de Logradouros, no município de Araguari-MG e  pó de brita, brita 0, brita 1 e brita 2 e pedra de mão a serem empregados na Obra de Construção de Infraestrutura para Hangares na Base Aérea de São Pedro da Aldeia/RJ 
+Tema: Outras compras
+Compra: Registro de Preços, pelo prazo de até 12 meses, para eventual aquisição de Materiais da marca Sigma para atender as necessidades de Bio Manguinhos. 
+Tema: Outras compras
+Compra: Contratação de serviços de coleta, transporte, tratamento e destinação final de resíduos sólidos de saúde (lixo hospitalar) para o Hospital Geral de Belém. 
+Tema: Outras compras
+Compra: Solução comunicação privada e corporativa com fornecimento de software do ambiente colaborativo e de smartphone com licença de uso do ambiente colaborativo, que garanta a inviolabilidade da comunicação e permita a contribuição entre usuários usando mensagens de texto, voz, vídeo e documentos. 
+Tema: Tecnologia da Informação
+Compra: Pregão destinado para eventual aquisição de material de higiene e limpeza 
+Tema: Outras compras
+Compra: Registro de Preços para eventual aquisição de no-break s destinados às diversas Unidades Administrativas do Banco do Nordeste, incluindo a instalação, configuração e testes, bem como a assistência técnica durante o período de garantia. ITEM 1   No-break 3kVA; ITEM 2   No-break 10kVA. 
+Tema: Tecnologia da Informação
+Compra: [Objeto a ser classificado]
+Tema:
+```
