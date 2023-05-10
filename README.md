@@ -8,6 +8,13 @@ O dataset consiste em objetos de editais de licitação, classificados em 'Tecno
 
 Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) utilizou-se zero-shot. Por fim, foi feito o fine-tune do modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) com o restante (6535 exemplos). A tabela de resultados se encontra abaixo.
 
+| Notebook | Colab |
+|-----------------------------------|---------------|
+| Classificação-SetFit-Few-shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-SetFit-Few-shot.ipynb) |
+| Classificação-Finetunning-ult5.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-Finetunning-ult5.ipynb) |
+| Classificacao-GPT3e3.5-Few-Shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-GPT3e3.5-Few-Shot.ipynb) |
+| Classificacao-ChatGPT-Zero-Shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-ChatGPT-Zero-Shot.ipynb) |
+
 
 | Modelo - Qtd. Shots                                                                                                                     | Parâmetros | Acuraccy | Recall TI | Precision TI | Recall Outras compras | Precision Outras compras |
 |-----------------------------------------------------------------------------------------------------------------------------------------|------------|----------|-----------|--------------|-----------------------|--------------------------|
@@ -23,14 +30,6 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 | Davinci-003 - 12 shot                                                                                                                   | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
 | ult5-pt-small - 6535 fine-tune                                                                                                          | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
-Notebooks
-
-| Notebook | Colab |
-|-----------------------------------|---------------|
-| Classificação-SetFit-Few-shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-SetFit-Few-shot.ipynb) |
-| Classificação-Finetunning-ult5.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classifica%C3%A7%C3%A3o-Finetunning-ult5.ipynb) |
-| Classificacao-GPT3e3.5-Few-Shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-GPT3e3.5-Few-Shot.ipynb) |
-| Classificacao-ChatGPT-Zero-Shot.ipynb | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thacio/Few-Shot-Editais-TI/blob/main/Classificacao-ChatGPT-Zero-Shot.ipynb) |
 
 
 ## Observações e comentários
