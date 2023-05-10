@@ -34,9 +34,9 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 
 ## Observações e comentários
 
-- Seria interessante saber a partir de qual tamanho de rede ultrapassria a performance do SetFit, mas não existe modelo da OpenAI disponível intermediário entre 6.7B e 175B. 
+- Seria interessante saber a partir de qual tamanho de rede ultrapassaria a performance do SetFit, mas não existe modelo da OpenAI disponível intermediário entre 6.7B e 175B. 
 
-- Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificando errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganham 1% de acurácia e há um pequeno aumento em todas as métricas. Vou deixar da forma como está, sem efetuar os recálculos, para manter os mesmos resultados dos notebooks.
+- Após a realização dos testes, como o set de validação foi selecionado aleatoriamente, um dos exemplos está classificado errado: 'Intenção de Registrar Preços para eventual aquisição de material - CONSUMO - UNIFORME ESCOLAR - Processo Original nº 23305.003766.2018-54.' = 'Tecnologia da informação'. Na prática, todos os modelos ganham 1% de acurácia e há um pequeno aumento em todas as métricas. Vou deixar da forma como está, sem efetuar os recálculos, para manter os mesmos resultados dos notebooks.
 
 - O modelo Curie, apesar de ser 6 vezes o tamanho do baggage, possui desempenho pior nesse dataset específico. Mesmo com algumas tentativas de mudança de prompt, o desempenho piorou. Além disso, tentar o prompt com letras minúsculas piorou o resultado nos 3 modelos GPT3 (ada, babage e curie). Os outros prompts testados tiveram pior performance, inclusive substituir as expressões 'Tecnologia da informação' por 'informática'. Como cada tentativa é paga, manteve-se os mesmos prompts do notebook que funcionaram com o DaVinci, Ada e Babbage. 
 
