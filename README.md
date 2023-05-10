@@ -2,23 +2,26 @@
 
 Estes notebooks comparam o few-shot do GPT3 (ada, babbage e currie), GPT3.5 (Davinci) e [SetFit](https://github.com/huggingface/setfit) utilizando o modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) e [paraphrase-multilingual-mpnet-base-v2](sentence-transformers/paraphrase-multilingual-mpnet-base-v2). O modelo [ult5-pt-small](tgsc/ult5-pt-small) com fine-tune.
 
-Os modelos utilizados da OpenAI foram: text-ada-001; text-babbage-001; text-curie-001; text-davinci-003; e gpt-3.5-turbo. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas.
+Os modelos utilizados da OpenAI foram: text-ada-001; text-babbage-001; text-curie-001; text-davinci-003; e gpt-3.5-turbo. Foi utilizado 'temperature' = 0 para usarmos *greedy decoding* e remover a aleatoriedade das respostas. Os modelos 'ada', 'babbage' e 'curie' não retornaram classificações direito.
 
 O dataset consiste em objetos de editais de licitação, classificados em 'Tecnologia da informação', se o objeto se referir a essa área, e 'Outras compras' para todo o resto (obras, saúde, escritório, automóveis, etc). Foram separados 100 exemplos aleatórios de validação (reproduzidos em todo o notebook com o seeds), com 50 exemplos de cada classe. Se decidiu por 100, pois o aumento do número de exemplos começa a ficar proibitivo para o teste com o davinci. Para o davinci, 100 exemplos custa perto de $3.5 doláres, então o dataset inteiro passaria dos $160 (quase mil reais). 
 
 Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) utilizou-se zero-shot. Por fim, foi feito o fine-tune do modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) com o restante (6535 exemplos). A tabela de resultados se encontra abaixo.
 
 
-| Modelo - Qtd. Shots                               | Parâmetros | Acuraccy | Recall TI | Precision TI | Recall Outras compras | Precision Outras compras |
-|---------------------------------------------------|------------|----------|-----------|--------------|-----------------------|--------------------------|
-| Ada - 12 shot                                     |    -      | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
-| Babbage- 12 shot                                  | 1B         | 0.6      | 0.96      | 0.558        | 0.24                  | 0.857                    |
-| Curie - 12 shot                                   | 6.7B       | 0.55     | 0.96      | 0.527        | 0.14                  | 0.77                     |
-| sentence-transformer-ult5-pt-small - 12 shot    | 51M        | 0.84     | 0.8       | 0.869        | 0.88                  | 0.814                    |
-| paraphrase-multilingual-mpnet-base-v2 - 12 shot | 278M       | 0.86     | 0.8       | 0.909        | 0.92                  | 0.821                    |
-| ChatGPT - zero shot                               | 175B       | 0.91     | 0.86      | 0.955        | 0.96                  | 0.872                    |
-| Davinci-003 - 12 shot                             | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
-| ult5-pt-small - 6535 fine-tune                    | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
+| Modelo - Qtd. Shots                                                                                                                     | Parâmetros | Acuraccy | Recall TI | Precision TI | Recall Outras compras | Precision Outras compras |
+|-----------------------------------------------------------------------------------------------------------------------------------------|------------|----------|-----------|--------------|-----------------------|--------------------------|
+| Ada - 12 shot                                                                                                                           | -          | 0.55     | 0.78      | 0.534        | 0.32                  | 0.592                    |
+| Ada (2o prompt) - 12 shot                                                                                                               | -          | 0.56     | 0.6       | 0.555        | 0.52                  | 0.565                    |
+| Baggage - 12 shot                                                                                                                       | 1B         | 0.6      | 0.96      | 0.558        | 0.24                  | 0.857                    |
+| Baggage - (2o prompt) - 12 shot                                                                                                         | 1B         | 0.62     | 0.96      | 0.571        | 0.28                  | 0.875                    |
+| Curie - 12 shot                                                                                                                         | 6.7B       | 0.55     | 0.96      | 0.527        | 0.14                  | 0.77                     |
+| Curie (2o prompt) - 12 shot                                                                                                             | 6.7B       | 0.52     | 0.9       | 0.511        | 0.14                  | 0.583                    |
+| [sentence-transformer-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small)   - 12 shot                                               | 51M        | 0.84     | 0.8       | 0.869        | 0.88                  | 0.814                    |
+| [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2)   - 12 shot | 278M       | 0.86     | 0.8       | 0.909        | 0.92                  | 0.821                    |
+| ChatGPT - zero shot                                                                                                                     | 175B       | 0.91     | 0.86      | 0.955        | 0.96                  | 0.872                    |
+| Davinci-003 - 12 shot                                                                                                                   | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
+| ult5-pt-small - 6535 fine-tune                                                                                                          | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
 Notebooks
 
