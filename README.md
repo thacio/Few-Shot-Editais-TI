@@ -30,11 +30,13 @@ Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) 
 | Baggage    (2o prompt) - 12 shot                                                                                                        | 1B         | 0.62     | 0.96      | 0.571        | 0.28                  | 0.875                    |
 | Ada (3o prompt) - 12 shot                                                                                                               | -          | 0.72     | 0.92      | 0.657        | 0.52                  | 0.866                    |
 | Ada (4o prompt) - 12 shot                                                                                                               | -          | 0.74     | 0.9       | 0.681        | 0.58                  | 0.852                    |
+| text-davinci-001 (1o prompt) - 12 shot                                                                                                  | 175B       | 0.81     | 0.88      | 0.771        | 0.74                  | 0.86                     |
 | [sentence-transformer-ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small)   - 12 shot                                               | 51M        | 0.84     | 0.8       | 0.869        | 0.88                  | 0.814                    |
 | [paraphrase-multilingual-mpnet-base-v2](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2)   - 12 shot | 278M       | 0.86     | 0.8       | 0.909        | 0.92                  | 0.821                    |
 | ChatGPT - zero shot                                                                                                                     | 175B       | 0.91     | 0.86      | 0.955        | 0.96                  | 0.872                    |
-| Davinci-003 (1o prompt) - 12 shot                                                                                                       | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
-| ult5-pt-small - 6535 fine-tune                                                                                                          | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
+| text-davinci-002 (1o prompt) - 12 shot                                                                                                  | 175B       | 0.93     | 0.98      | 0.89         | 0.88                  | 0.977                    |
+| text-davinci-003 (1o prompt) - 12 shot                                                                                                  | 175B       | 0.95     | 0.96      | 0.941        | 0.94                  | 0.959                    |
+| [ult5-pt-small](https://huggingface.co/tgsc/ult5-pt-small)   - 6535 fine-tune                                                           | 82.4M      | 0.97     | 0.96      | 0.979        | 0.98                  | 0.96                     |
 
 
 ## Observações e comentários
