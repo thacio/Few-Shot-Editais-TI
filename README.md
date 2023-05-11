@@ -201,7 +201,7 @@ Tema:
 
 ## Prompt 6
 
-Performace de 54% do ada, 55% do Babbaga e 54% do Curie. Este prompt estaria conforme o prompt de perguntas e respostas da página de [Prompt Design](https://platform.openai.com/docs/guides/completion/prompt-design) da OpenAI, e também do [paper original -Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf).
+Performace de 54% do ada, 55% do Babbaga e 54% do Curie. Este prompt estaria conforme o prompt de perguntas e respostas da página de [Prompt Design](https://platform.openai.com/docs/guides/completion/prompt-design) da OpenAI e também do [paper original -Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165.pdf).
 
 ```
 Responda 'Tecnologia da informação' se as compras das licitações apresentadas a seguir se refiram ao tema de tecnologia da informação, softwares, materiais e equipamentos de informática, entre outros. Responda 'Outras compras' para qualquer outro tipo de compra, como escritório, obras, saúde, automóveis, entre outros.
