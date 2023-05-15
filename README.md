@@ -6,7 +6,7 @@ Os modelos utilizados da OpenAI foram: 'text-ada-001'; 'text-babbage-001'; 'text
 
 O dataset consiste em objetos de editais de licitação, classificados em 'Tecnologia da informação', se o objeto se referir a essa área, e 'Outras compras' para todo o resto (obras, saúde, escritório, automóveis, etc). Foram separados 100 exemplos aleatórios de validação (reproduzidos em todo o notebook com o seeds), com 50 exemplos de cada classe. Se decidiu por 100, pois o aumento do número de exemplos começa a ficar com o custo proibitivo para o teste do davinci. Para o davinci, 100 exemplos custa perto de $3.5 doláres, então o dataset inteiro passaria dos $160 (quase mil reais). 
 
-Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) utilizou-se zero-shot. Por fim, foi feito o fine-tune do modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) com o restante (6535 exemplos). A comparação de fine-tune com few-shot não é justa, porém é interessante para verificar que nesse tipo de classificação (que não demanda raciocínio linguístico que as redes pequenas são incapazes), fine-tune é a melhor opção. A tabela de resultados se encontra abaixo.
+Utilizou-se 12 shots, 6 exemplos de cada classe. Para o gpt-3.5-turbo (ChatGPT) utilizou-se zero-shot. Por fim, foi feito o fine-tune do modelo [ult5-pt-small](tgsc/sentence-transformer-ult5-pt-small) com o restante (6535 exemplos). A comparação de fine-tune com few-shot não é justa, porém é interessante para verificar que nesse tipo de classificação (que não demanda raciocínio linguístico que as redes pequenas são incapazes) fine-tune é a melhor opção. A tabela de resultados se encontra abaixo.
 
 | Notebook | Colab |
 |-----------------------------------|---------------|
